@@ -19,6 +19,7 @@ public class FibonacciTest {
     public void finish(){ fibonacci=null;}
 
     @Test
+    // fibonacci(0) = 0
     public void computeShouldReturnZeroIfTheNumberIsZero(){
         int expectedValue=0;
         int obtainedValue=fibonacci.compute(0);
@@ -27,6 +28,7 @@ public class FibonacciTest {
     }
 
     @Test
+    // fibonacci(1) = 1
     public void computeShouldReturnOneIfTheNumberIsOne(){
         int expectedValue=1;
         int obtainedValue=fibonacci.compute(1);
@@ -35,6 +37,7 @@ public class FibonacciTest {
     }
 
     @Test
+    // fibonacci(n) = fibonacci(n-1) + fibonacci(n-2)
     public void computeShouldReturnTheSumOfThePreviousTwoNumbersCompute(){
         int expectedValue;
         int obtainedValue;
@@ -47,6 +50,7 @@ public class FibonacciTest {
     }
 
     @Test
+    // fibonacci(negative value) = RuntimeException
     public void computeShouldRaiseAnExceptionOfANegativeNumber(){
         assertThrows(RuntimeException.class, ()->fibonacci.compute(-1));
     }
